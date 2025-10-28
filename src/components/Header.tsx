@@ -56,7 +56,7 @@ export default function Header() {
               <Star className="w-5 h-5" />
               <span className="hidden md:inline">즐겨찾기</span>
               {favorites.length > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute -top-2 -right-3 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
                   {favorites.length}
                 </span>
               )}
@@ -69,7 +69,7 @@ export default function Header() {
               <Scale className="w-5 h-5" />
               <span className="hidden md:inline">비교</span>
               {compareList.length > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute -top-2 -right-3 w-4 h-4 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center">
                   {compareList.length}
                 </span>
               )}

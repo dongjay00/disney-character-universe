@@ -112,7 +112,7 @@ export default function CharacterDetailPage({
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 md:items-start">
             {/* 이미지 섹션 */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
