@@ -17,12 +17,3 @@ export const useCharacter = (id: number) => {
     staleTime: 10 * 60 * 1000, // 10분
   });
 };
-
-export const useSearchCharacters = (query: string) => {
-  return useQuery({
-    queryKey: ["search", query],
-    queryFn: () => disneyApi.searchCharacters(query),
-    enabled: query.length > 0,
-    staleTime: 2 * 60 * 1000, // 2분
-  });
-};

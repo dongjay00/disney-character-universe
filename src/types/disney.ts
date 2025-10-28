@@ -17,9 +17,12 @@ export interface DisneyCharacter {
 
 export interface CharacterListResponse {
   data: DisneyCharacter[];
-  count: number;
-  totalPages: number;
-  nextPage: string | null;
+  info: {
+    count: number;
+    totalPages: number;
+    nextPage: string | null;
+    previousPage: string | null;
+  };
 }
 
 export interface CharacterDetailResponse {

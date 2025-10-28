@@ -1,35 +1,28 @@
 import { create } from "zustand";
 
+export type SearchType = "films" | "tvShows" | "videoGames";
+
 interface FilterState {
-  selectedFilm: string;
-  selectedTvShow: string;
-  selectedGame: string;
+  searchType: SearchType;
   searchQuery: string;
   currentPage: number;
-  setSelectedFilm: (film: string) => void;
-  setSelectedTvShow: (show: string) => void;
-  setSelectedGame: (game: string) => void;
+  setSearchType: (type: SearchType) => void;
   setSearchQuery: (query: string) => void;
   setCurrentPage: (page: number) => void;
   resetFilters: () => void;
 }
 
 export const useFilterStore = create<FilterState>((set) => ({
-  selectedFilm: "",
-  selectedTvShow: "",
-  selectedGame: "",
+  searchType: "films",
   searchQuery: "",
   currentPage: 1,
-  setSelectedFilm: (film) => set({ selectedFilm: film, currentPage: 1 }),
-  setSelectedTvShow: (show) => set({ selectedTvShow: show, currentPage: 1 }),
-  setSelectedGame: (game) => set({ selectedGame: game, currentPage: 1 }),
+  setSearchType: (type) =>
+    set({ searchType: type, currentPage: 1, searchQuery: "" }),
   setSearchQuery: (query) => set({ searchQuery: query, currentPage: 1 }),
   setCurrentPage: (page) => set({ currentPage: page }),
   resetFilters: () =>
     set({
-      selectedFilm: "",
-      selectedTvShow: "",
-      selectedGame: "",
+      searchType: "films",
       searchQuery: "",
       currentPage: 1,
     }),

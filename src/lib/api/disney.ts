@@ -1,3 +1,5 @@
+// lib/api/disney.ts
+
 import {
   CharacterListResponse,
   CharacterDetailResponse,
@@ -7,7 +9,7 @@ import {
 const BASE_URL = "https://api.disneyapi.dev";
 
 export const disneyApi = {
-  // 캐릭터 목록 조회
+  // 캐릭터 목록 조회 (필터링 포함)
   getCharacters: async (
     filters: FilterOptions = {}
   ): Promise<CharacterListResponse> => {
@@ -41,27 +43,5 @@ export const disneyApi = {
     }
 
     return response.json();
-  },
-
-  // 모든 캐릭터 검색용 (이름 기반 필터링)
-  searchCharacters: async (query: string): Promise<CharacterListResponse> => {
-    const response = await fetch(`${BASE_URL}/character?pageSize=200`);
-
-    if (!response.ok) {
-      throw new Error("Failed to search characters");
-    }
-
-    const data: CharacterListResponse = await response.json();
-
-    // 클라이언트 사이드에서 이름 필터링
-    const filtered = data.data.filter((char) =>
-      char.name.toLowerCase().includes(query.toLowerCase())
-    );
-
-    return {
-      ...data,
-      data: filtered,
-      count: filtered.length,
-    };
   },
 };

@@ -84,7 +84,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto"
         >
-          7,400개 이상의 디즈니 캐릭터를 만나보세요.
+          9,800개 이상의 디즈니 캐릭터를 만나보세요.
           <br />
           영화, TV쇼, 게임 속 친구들이 모두 여기에!
         </motion.p>
@@ -111,7 +111,7 @@ export default function Hero() {
           className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
         >
           {[
-            { label: "캐릭터", value: "7,400+" },
+            { label: "캐릭터", value: "9,800+" },
             { label: "영화", value: "200+" },
             { label: "TV쇼", value: "100+" },
           ].map((stat, index) => (
