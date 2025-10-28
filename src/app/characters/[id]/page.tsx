@@ -180,7 +180,11 @@ export default function CharacterDetailPage({
                   <Calendar className="w-4 h-4" />
                   <span className="text-sm">
                     등록일:{" "}
-                    {new Date(character.createdAt).toLocaleDateString("ko-KR")}
+                    {character.createdAt
+                      ? new Date(character.createdAt).toLocaleDateString(
+                          "ko-KR"
+                        )
+                      : "-"}
                   </span>
                 </div>
               </motion.div>
@@ -348,25 +352,27 @@ export default function CharacterDetailPage({
               )}
 
               {/* 출처 링크 */}
-              <motion.a
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9 }}
-                href={character.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="disney-card p-6 flex items-center justify-between hover:shadow-xl transition-shadow group"
-              >
-                <div>
-                  <h3 className="font-bold mb-1 text-gray-900 dark:text-white">
-                    더 알아보기
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Disney Fandom Wiki에서 더 많은 정보를 확인하세요
-                  </p>
-                </div>
-                <ExternalLink className="w-6 h-6 text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform" />
-              </motion.a>
+              {character.sourceUrl && (
+                <motion.a
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 }}
+                  href={character.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="disney-card p-6 flex items-center justify-between hover:shadow-xl transition-shadow group"
+                >
+                  <div>
+                    <h3 className="font-bold mb-1 text-gray-900 dark:text-white">
+                      더 알아보기
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Disney Fandom Wiki에서 더 많은 정보를 확인하세요
+                    </p>
+                  </div>
+                  <ExternalLink className="w-6 h-6 text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+              )}
             </div>
           </div>
         </div>

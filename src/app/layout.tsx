@@ -23,7 +23,7 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="ko">
+    <html lang="ko" className="dark">
       <head>
         <title>Disney Character Universe ✨</title>
         <meta
