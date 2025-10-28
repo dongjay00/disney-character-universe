@@ -10,6 +10,11 @@
 - 📱 **반응형 디자인**: 모바일부터 데스크톱까지
 - ⚡ **빠른 성능**: React Query를 통한 최적화된 데이터 캐싱
 - 🎭 **상세 정보**: 동료, 적, 출연작 등 완벽한 정보
+- 🌙 **다크모드**: 눈에 편한 다크 테마 지원
+- ⭐ **즐겨찾기**: 좋아하는 캐릭터 저장 (로컬 저장)
+- ⚖️ **캐릭터 비교**: 최대 3명까지 동시 비교
+- 📤 **소셜 공유**: 웹 Share API를 통한 쉬운 공유
+- 🎬 **부드러운 애니메이션**: Framer Motion 기반 인터랙션
 
 ## 🛠 기술 스택
 
@@ -17,7 +22,7 @@
 - **Language**: TypeScript
 - **State Management**: Zustand
 - **Data Fetching**: TanStack React Query
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS v4 ⚡ (CSS-first configuration)
 - **Icons**: Lucide React
 - **API**: Disney API (https://api.disneyapi.dev)
 
@@ -39,6 +44,8 @@ yarn install
 # 또는
 pnpm install
 ```
+
+**참고**: Tailwind CSS v4를 사용합니다. `tailwind.config.ts` 파일은 필요 없으며, 모든 설정은 `app/globals.css`의 `@theme` 블록에서 관리됩니다.
 
 ### 3. 개발 서버 실행
 

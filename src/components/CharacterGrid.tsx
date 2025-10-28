@@ -32,18 +32,24 @@ export default function CharacterGrid({
     return (
       <div className="text-center py-20">
         <div className="text-6xl mb-4">🔍</div>
-        <h3 className="text-2xl font-bold text-gray-700 mb-2">
+        <h3 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2">
           캐릭터를 찾을 수 없어요
         </h3>
-        <p className="text-gray-500">다른 검색어나 필터를 시도해보세요</p>
+        <p className="text-gray-500 dark:text-gray-400">
+          다른 검색어나 필터를 시도해보세요
+        </p>
       </div>
     );
   }
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-      {characters.map((character) => (
-        <CharacterCard key={character._id} character={character} />
+      {characters.map((character, index) => (
+        <CharacterCard
+          key={character._id}
+          character={character}
+          index={index}
+        />
       ))}
     </div>
   );

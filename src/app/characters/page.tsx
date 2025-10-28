@@ -58,7 +58,7 @@ export default function CharactersPage() {
           <h1 className="text-4xl md:text-5xl font-bold magic-text mb-4">
             모든 캐릭터 ✨
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
             {isLoading ? "로딩 중..." : `총 ${data?.count || 0}명의 캐릭터`}
           </p>
         </div>
