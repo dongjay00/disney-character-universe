@@ -121,9 +121,11 @@ export default function Hero() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 cursor-default"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-2 sm:p-4 md:p-6 cursor-default"
             >
-              <div className="text-4xl font-bold mb-2">{stat.value}</div>
+              <div className="text-lg sm:text-2xl md:text-4xl font-bold mb-2">
+                {stat.value}
+              </div>
               <div className="text-sm text-white/80">{stat.label}</div>
             </motion.div>
           ))}
